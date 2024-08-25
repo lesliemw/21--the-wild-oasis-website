@@ -18,6 +18,7 @@ export const metadata = {
 };
 import "@/app/_styles/globals.css";
 import Header from "./_components/Header";
+import { ReservationProvider } from "./_components/ReservationContext";
 
 function RootLayout({ children }) {
   return (
@@ -27,7 +28,9 @@ function RootLayout({ children }) {
       >
         <Header />
         <div className="flex-1 grid px-8 py-12 ">
-          <main className="max-w-7xl mx-auto w-full">{children}</main>
+          <main className="max-w-7xl mx-auto w-full">
+            <ReservationProvider>{children}</ReservationProvider>
+          </main>
         </div>
       </body>
     </html>
